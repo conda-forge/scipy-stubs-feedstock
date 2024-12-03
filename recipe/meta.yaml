@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -35,9 +35,17 @@ test:
 
 about:
   home: https://github.com/jorenham/scipy-stubs/
-  summary: Typing Stubs for SciPy
   license: BSD-3-Clause
   license_file: LICENSE
+  summary: Precise type hints for all of SciPy.
+  description: |
+    Stubs package providing type annotations and static type checking support for SciPy, 
+    enabling improved type inference and static analysis for scientific computing and 
+    numerical programming in modern Python.
+
+  dev_url: https://github.com/jorenham/scipy-stubs/
+  doc_url: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
+  doc_source_url: https://github.com/jorenham/scipy-stubs/blob/master/README.md#scipy-stubs
 
 extra:
   recipe-maintainers:
