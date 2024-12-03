@@ -7,7 +7,16 @@ Home: https://github.com/jorenham/scipy-stubs/
 
 Package license: BSD-3-Clause
 
-Summary: Typing Stubs for SciPy
+Summary: Precise type hints for all of SciPy.
+
+Development: https://github.com/jorenham/scipy-stubs/
+
+Documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
+
+Stubs package providing type annotations and static type checking support for SciPy,
+enabling improved type inference and static analysis for scientific computing and
+numerical programming in modern Python.
+
 
 Current build status
 ====================
