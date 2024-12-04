@@ -1,5 +1,5 @@
 {% set name = "scipy-stubs" %}
-{% set version = "1.14.1.4" %}
+{% set version = "1.14.1.5" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,21 +8,21 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scipy_stubs-{{ version }}.tar.gz
-  sha256: 215a2c9d865e355a5c5cc088ec6d87f489a584396256113d72d7d24cfb0e889c
+  sha256: 66c160c6b72b1406edc7827879ef25ea81dc3d95ab7e4af3a2de836f27c26ce6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core
+    - hatchling
     - pip
   run:
     - python >={{ python_min }},<4.0.0
-    - optype >=0.7.1
+    - optype >=0.7.3
   run_constrained:
     - scipy >=1.10
 
