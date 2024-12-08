@@ -1,6 +1,6 @@
 {% set name = "scipy-stubs" %}
 {% set version = "1.14.1.5" %}
-{% set scipy_version = version.split('.')[:3] | join('.') }
+{% set scipy_version = version.split('.')[:3] | join('.') %}
 {% set python_min = "3.10" %}
 
 package:
