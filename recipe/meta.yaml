@@ -1,23 +1,22 @@
-{% set name = "scipy-stubs" %}
 {% set version = "1.14.1.5" %}
-{% set scipy_version = version.split('.')[:3] | join('.') %}
+{% set scipy_version = version.rsplit('.', 1)[0] %}
 {% set python_min = "3.10" %}
 
 package:
-  name: {{ name|lower }}
+  name: scipy-stubs-split
   version: {{ version }}
 
-source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scipy_stubs-{{ version }}.tar.gz
-  sha256: 66c160c6b72b1406edc7827879ef25ea81dc3d95ab7e4af3a2de836f27c26ce6
-
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 outputs:
   - name: scipy-stubs
+    source:
+      url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scipy_stubs-{{ version }}.tar.gz
+      sha256: 66c160c6b72b1406edc7827879ef25ea81dc3d95ab7e4af3a2de836f27c26ce6
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
         - python {{ python_min }}
@@ -36,12 +35,15 @@ outputs:
         - pip
 
   - name: scipy-typed
+    build:
+      noarch: python
     requirements:
       host:
         - python
       run:
         - python
         - scipy =={{ scipy_version }}
+        - {{ pin_subpackage('scipy-stubs', exact=True) }}
     test:
       requires:
         - basedmypy
@@ -71,3 +73,4 @@ extra:
   recipe-maintainers:
     - lucascolley
     - jorenham
+  feedstock-name: scipy-stubs
