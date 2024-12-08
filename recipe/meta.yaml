@@ -1,5 +1,6 @@
 {% set name = "scipy-stubs" %}
 {% set version = "1.14.1.5" %}
+{% set scipy_version = version.split('.')[:3] | join('.') }
 {% set python_min = "3.10" %}
 
 package:
@@ -15,23 +16,42 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - hatchling
-    - pip
-  run:
-    - python >={{ python_min }},<4.0.0
-    - optype >=0.7.3
-  run_constrained:
-    - scipy >=1.10
+outputs:
+  - name: scipy-stubs
+    requirements:
+      host:
+        - python {{ python_min }}
+        - hatchling
+        - pip
+      run:
+        - python >={{ python_min }},<4.0.0
+        - optype >=0.7.3
+      run_constrained:
+        - scipy >=1.10
+    test:
+      commands:
+        - pip check
+      requires:
+        - python {{ python_min }}
+        - pip
 
-test:
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+  - name: scipy-typed
+    requirements:
+      host:
+        - python
+      run:
+        - python
+        - scipy =={{ scipy_version }}
+    test:
+      requires:
+        - basedmypy
+      imports:
+        - scipy
+      source_files:
+        - pyproject.toml
+        - .mypyignore
+      commands:
+        - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --ignore-unused-allowlist scipy
 
 about:
   home: https://github.com/jorenham/scipy-stubs/
