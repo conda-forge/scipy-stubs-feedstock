@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/jorenham/scipy-stubs/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5aa72086417dd56fd1835f4fda9635f3d953b46bcfbce71899b4b130469f2797
+  sha256: 99c6b552fc68be479381bc8e9980f286f31ce919ce1d0653c422872556f8e363
 
 build:
   number: 1
