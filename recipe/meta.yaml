@@ -15,7 +15,7 @@ build:
 
 outputs:
   - name: scipy-stubs
-    script: build-output.sh
+    script: pip install . -vv --no-deps --no-build-isolation
     build:
       noarch: python
     requirements:
