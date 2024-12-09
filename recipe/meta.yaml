@@ -6,14 +6,19 @@ package:
   name: scipy-stubs-split
   version: {{ version }}
 
+source:
+  url: https://pypi.org/packages/source/s/scipy-stubs/scipy_stubs-{{ version }}.tar.gz
+  sha256: 66c160c6b72b1406edc7827879ef25ea81dc3d95ab7e4af3a2de836f27c26ce6
+
 build:
   number: 0
 
+requirements:
+  build:
+    - python
+
 outputs:
   - name: scipy-stubs
-    source:
-      url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scipy_stubs-{{ version }}.tar.gz
-      sha256: 66c160c6b72b1406edc7827879ef25ea81dc3d95ab7e4af3a2de836f27c26ce6
     build:
       noarch: python
       script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
