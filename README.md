@@ -3,6 +3,46 @@ About scipy-stubs-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scipy-stubs-feedstock/blob/main/LICENSE.txt)
 
+
+About scipy-stubs
+-----------------
+
+Home: https://github.com/jorenham/scipy-stubs/
+
+Package license: BSD-3-Clause
+
+Summary: Precise type hints for all of SciPy.
+
+Development: https://github.com/jorenham/scipy-stubs/
+
+Documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
+
+Stubs package providing type annotations and static type checking support for SciPy, 
+enabling improved type inference and static analysis for scientific computing and 
+numerical programming in modern Python.
+
+
+About scipy-stubs
+-----------------
+
+Home: https://github.com/jorenham/scipy-stubs/
+
+Package license: BSD-3-Clause
+
+Summary: Precise type hints for all of SciPy.
+
+Development: https://github.com/jorenham/scipy-stubs/
+
+Documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
+
+Stubs package providing type annotations and static type checking support for SciPy,
+enabling improved type inference and static analysis for scientific computing and
+numerical programming in modern Python.
+
+
+About scipy-typed
+-----------------
+
 Home: https://github.com/jorenham/scipy-stubs/
 
 Package license: BSD-3-Clause
@@ -37,6 +77,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-scipy--stubs-green.svg)](https://anaconda.org/conda-forge/scipy-stubs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/scipy-stubs.svg)](https://anaconda.org/conda-forge/scipy-stubs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/scipy-stubs.svg)](https://anaconda.org/conda-forge/scipy-stubs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/scipy-stubs.svg)](https://anaconda.org/conda-forge/scipy-stubs) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-scipy--typed-green.svg)](https://anaconda.org/conda-forge/scipy-typed) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/scipy-typed.svg)](https://anaconda.org/conda-forge/scipy-typed) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/scipy-typed.svg)](https://anaconda.org/conda-forge/scipy-typed) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/scipy-typed.svg)](https://anaconda.org/conda-forge/scipy-typed) |
 
 Installing scipy-stubs
 ======================
@@ -48,16 +89,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `scipy-stubs` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `scipy-stubs, scipy-typed` can be installed with `conda`:
 
 ```
-conda install scipy-stubs
+conda install scipy-stubs scipy-typed
 ```
 
 or with `mamba`:
 
 ```
-mamba install scipy-stubs
+mamba install scipy-stubs scipy-typed
 ```
 
 It is possible to list all of the versions of `scipy-stubs` available on your platform with `conda`:
