@@ -23,7 +23,7 @@ outputs:
   - name: scipy-stubs
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      script: build-output.sh
     requirements:
       host:
         - python {{ python_min }}
