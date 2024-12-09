@@ -21,9 +21,9 @@ requirements:
 
 outputs:
   - name: scipy-stubs
+    script: build-output.sh
     build:
       noarch: python
-      script: build-output.sh
     requirements:
       host:
         - python {{ python_min }}
