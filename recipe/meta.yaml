@@ -47,6 +47,7 @@ outputs:
         - {{ pin_subpackage('scipy-stubs', exact=True) }}
     test:
       requires:
+        - python {{ python_min }}
         - basedmypy
       imports:
         - scipy
