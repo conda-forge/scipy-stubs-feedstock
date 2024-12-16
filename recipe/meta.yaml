@@ -40,9 +40,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
-        - python
+        - python >={{ python_min }},<4.0.0
         - scipy =={{ scipy_version }}
         - {{ pin_subpackage('scipy-stubs', exact=True) }}
     test:
