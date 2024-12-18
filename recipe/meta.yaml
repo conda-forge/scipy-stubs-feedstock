@@ -1,37 +1,63 @@
-{% set name = "scipy-stubs" %}
 {% set version = "1.14.1.6" %}
+{% set scipy_version = version.rsplit('.', 1)[0] %}
 {% set python_min = "3.10" %}
 
 package:
-  name: {{ name|lower }}
+  name: scipy-stubs-split
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/scipy_stubs-{{ version }}.tar.gz
-  sha256: 7505ea8a1624ab4c72516a04eb2838f5ae43e33ba100fc2d5c44103003dd414a
+  url: https://github.com/jorenham/scipy-stubs/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: f2394a021c48e0a4a0e9ac96db13603a0d6c2e152b88e1f2f57ad719a1152a58
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - hatchling
-    - pip
-  run:
-    - python >={{ python_min }},<4.0.0
-    - optype >=0.7.3
-  run_constrained:
-    - scipy >=1.10
+outputs:
+  - name: scipy-stubs
+    build:
+      noarch: python
+      script: pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python {{ python_min }}
+        - hatchling
+        - pip
+      run:
+        - python >={{ python_min }},<4.0.0
+        - optype >=0.7.3
+      run_constrained:
+        - scipy >=1.10
+    test:
+      commands:
+        - pip check
+      requires:
+        - python {{ python_min }}
+        - pip
 
-test:
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+  - name: scipy-typed
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }},<4.0.0
+        - scipy =={{ scipy_version }}
+        - {{ pin_subpackage('scipy-stubs', exact=True) }}
+    test:
+      requires:
+        - python {{ python_min }}
+        - basedmypy
+      imports:
+        - scipy
+      files:
+        - .mypyignore-extra
+      source_files:
+        - pyproject.toml
+        - .mypyignore
+      commands:
+        - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-unused-allowlist scipy
 
 about:
   home: https://github.com/jorenham/scipy-stubs/
@@ -51,3 +77,4 @@ extra:
   recipe-maintainers:
     - lucascolley
     - jorenham
+  feedstock-name: scipy-stubs
