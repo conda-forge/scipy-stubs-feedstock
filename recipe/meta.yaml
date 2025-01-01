@@ -1,4 +1,4 @@
-{% set version = "1.14.1.6" %}
+{% set version = "1.15.0.0" %}
 {% set scipy_version = version.rsplit('.', 1)[0] %}
 {% set python_min = "3.10" %}
 
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/jorenham/scipy-stubs/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f2394a021c48e0a4a0e9ac96db13603a0d6c2e152b88e1f2f57ad719a1152a58
+  sha256: f0be6b369dc478e96be84088b1ba1a74378865d3bf2ecd0d89ff242991315a31
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: scipy-stubs
@@ -25,9 +25,9 @@ outputs:
         - pip
       run:
         - python >={{ python_min }},<4.0.0
-        - optype >=0.7.3
+        - optype >=0.8.0
       run_constrained:
-        - scipy >=1.10
+        - scipy >=1.15.0rc2
     test:
       commands:
         - pip check
