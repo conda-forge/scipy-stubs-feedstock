@@ -49,8 +49,9 @@ outputs:
       requires:
         - python {{ python_min }}
         - basedmypy
-      imports:
-        - scipy
+        - scipy >=1.15.0rc2,<1.15.1
+      # imports:
+        # - scipy
       files:
         - .mypyignore-extra
       source_files:
