@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy-stubs-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-{{ version }}.tar.gz
   sha256: 25756486635594025ed3249b6fb659c29dc5874c7b55565ad248b13a4ff4fa1c
 
 build:
