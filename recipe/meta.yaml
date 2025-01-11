@@ -1,4 +1,4 @@
-{% set version = "1.15.0.0" %}
+{% set version = "1.15.1.0" %}
 {% set scipy_version = version.rsplit('.', 1)[0] %}
 {% set python_min = "3.10" %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/jorenham/scipy-stubs/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e27812841ae83fea83d5e1173aa2e9fe609a45f3f77556680af9f47eccc8d493
+  sha256: 44ff9c3416db0ff13e6c816670de8e13aa8f06e3d10853bd82269fd968023567
 
 build:
   number: 0
