@@ -3,28 +3,6 @@ About scipy-stubs-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scipy-stubs-feedstock/blob/main/LICENSE.txt)
 
-
-About scipy-stubs
------------------
-
-Home: https://github.com/jorenham/scipy-stubs/
-
-Package license: BSD-3-Clause
-
-Summary: Precise type hints for all of SciPy.
-
-Development: https://github.com/jorenham/scipy-stubs/
-
-Documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
-
-Stubs package providing type annotations and static type checking support for SciPy, 
-enabling improved type inference and static analysis for scientific computing and 
-numerical programming in modern Python.
-
-
-About scipy-stubs
------------------
-
 Home: https://github.com/jorenham/scipy-stubs/
 
 Package license: BSD-3-Clause
@@ -38,25 +16,6 @@ Documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-
 Stubs package providing type annotations and static type checking support for SciPy,
 enabling improved type inference and static analysis for scientific computing and
 numerical programming in modern Python.
-
-
-About scipy-typed
------------------
-
-Home: https://github.com/jorenham/scipy-stubs/
-
-Package license: BSD-3-Clause
-
-Summary: Precise type hints for all of SciPy.
-
-Development: https://github.com/jorenham/scipy-stubs/
-
-Documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
-
-Stubs package providing type annotations and static type checking support for SciPy,
-enabling improved type inference and static analysis for scientific computing and
-numerical programming in modern Python.
-
 
 Current build status
 ====================
