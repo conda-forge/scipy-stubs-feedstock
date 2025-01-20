@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   version: 1.15.1.0
-  scipy_version: "version.rsplit('.', 1)[0]"
+  scipy_version: ${{ (version | split('.'))[:-1] | join('.') }}
   python_min: 3.10
 
 recipe:
@@ -24,7 +24,7 @@ outputs:
       script: pip install . -vv --no-deps --no-build-isolation
     requirements:
       host:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
         - hatchling
         - pip
       run:
@@ -35,7 +35,7 @@ outputs:
     tests:
       - requirements:
           run:
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
             - pip
         script:
           - pip check
@@ -45,7 +45,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }},<4.0.0
         - scipy ==${{ scipy_version }}
@@ -62,7 +62,7 @@ outputs:
             - .mypyignore
         requirements:
           run:
-            - python ${{ python_min }}
+            - python ${{ python_min }}.*
             - basedmypy
         script:
           - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --ignore-unused-allowlist scipy
