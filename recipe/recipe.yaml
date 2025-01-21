@@ -1,0 +1,87 @@
+schema_version: 1
+
+context:
+  version: 1.15.1.0
+  scipy_version: ${{ (version | split('.'))[:-1] | join('.') }}
+  python_min: 3.10
+
+recipe:
+  name: scipy-stubs-split
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ version }}.tar.gz
+  sha256: 25756486635594025ed3249b6fb659c29dc5874c7b55565ad248b13a4ff4fa1c
+
+build:
+  number: 1
+
+outputs:
+  - package:
+      name: scipy-stubs
+    build:
+      noarch: python
+      script: pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - hatchling
+        - pip
+      run:
+        - python >=${{ python_min }},<4.0.0
+        - optype >=0.8.0
+      run_constraints:
+        - scipy >=1.15.1,<1.16.0
+    tests:
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+            - pip
+        script:
+          - pip check
+  - package:
+      name: scipy-typed
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+      run:
+        - python >=${{ python_min }},<4.0.0
+        - scipy ==${{ scipy_version }}
+        - ${{ pin_subpackage('scipy-stubs', exact=True) }}
+    tests:
+      - python:
+          imports:
+            - scipy
+      - files:
+          recipe:
+            - .mypyignore-extra
+          source:
+            - pyproject.toml
+            - .mypyignore
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+            - basedmypy
+        script:
+          - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-unused-allowlist scipy
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Precise type hints for all of SciPy.
+  description: |
+    Stubs package providing type annotations and static type checking support for SciPy,
+    enabling improved type inference and static analysis for scientific computing and
+    numerical programming in modern Python.
+
+  homepage: https://github.com/jorenham/scipy-stubs/
+  repository: https://github.com/jorenham/scipy-stubs/
+  documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
+
+extra:
+  recipe-maintainers:
+    - lucascolley
+    - jorenham
+  feedstock-name: scipy-stubs
