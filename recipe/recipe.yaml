@@ -65,7 +65,7 @@ outputs:
             - python ${{ python_min }}.*
             - basedmypy
         script:
-          - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --ignore-unused-allowlist scipy
+          - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-unused-allowlist scipy
 
 about:
   license: BSD-3-Clause
