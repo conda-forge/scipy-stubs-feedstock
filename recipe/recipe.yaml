@@ -1,10 +1,10 @@
 schema_version: 1
 
 context:
-  version: 1.15.2.1
+  version: "1.15.2.2"
   # scipy_version: ${{ (version | split('.'))[:-1] | join('.') }}
   scipy_version: 1.15.2
-  python_min: 3.10
+  python_min: '3.10'
 
 recipe:
   name: scipy-stubs-split
@@ -12,7 +12,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ version }}.tar.gz
-  sha256: ba9590ef3cd24511dced121ac0a9c8d9d0681ca5ac091128f0f7ba5a936a8693
+  sha256: 0137d907d75381d2eda4f6af5b1d3211759cb193a0eadf5195716fb0b01ca3cb
 
 build:
   number: 0
