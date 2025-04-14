@@ -16,7 +16,7 @@ source:
   sha256: 0137d907d75381d2eda4f6af5b1d3211759cb193a0eadf5195716fb0b01ca3cb
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -78,9 +78,9 @@ about:
     enabling improved type inference and static analysis for scientific computing and
     numerical programming in modern Python.
 
-  homepage: https://github.com/jorenham/scipy-stubs/
-  repository: https://github.com/jorenham/scipy-stubs/
-  documentation: https://github.com/jorenham/scipy-stubs?tab=readme-ov-file#scipy-stubs
+  homepage: https://github.com/scipy/scipy-stubs/
+  repository: https://github.com/scipy/scipy-stubs/
+  documentation: https://github.com/scipy/scipy-stubs?tab=readme-ov-file#scipy-stubs
 
 extra:
   recipe-maintainers:
