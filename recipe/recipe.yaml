@@ -13,7 +13,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ version }}.tar.gz
-  sha256: 0137d907d75381d2eda4f6af5b1d3211759cb193a0eadf5195716fb0b01ca3cb
+  sha256: e8f76c9887461cf9424c1e2ad78ea5dac71dd4cbb383dc85f91adfe8f74d1e17
 
 build:
   number: 0
