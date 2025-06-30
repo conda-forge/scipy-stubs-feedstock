@@ -1,11 +1,11 @@
 schema_version: 1
 
 context:
-  version: 1.15.2.2
+  version: "1.16.0.1"
   # scipy_version: ${{ (version | split('.'))[:-1] | join('.') }}
-  scipy_version: 1.15.2
-  python_min: 3.10
-  optype_min: 0.9.3
+  scipy_version: 1.16.0
+  python_min: 3.11
+  optype_min: 0.10.0
 
 recipe:
   name: scipy-stubs-split
@@ -13,10 +13,10 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ version }}.tar.gz
-  sha256: 0137d907d75381d2eda4f6af5b1d3211759cb193a0eadf5195716fb0b01ca3cb
+  sha256: ac5e6659c268c448028b2161e11ca7edb7b6814110e0e77e45bd07378c342451
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -31,9 +31,9 @@ outputs:
         - pip
       run:
         - python >=${{ python_min }},<4.0.0
-        - optype >=${{ optype_min }}
+        - optype >=${{ optype_min }},<1.0.0
       run_constraints:
-        - scipy >=${{ scipy_version }},<1.16.0
+        - scipy >=${{ scipy_version }},<1.17.0
     tests:
       - requirements:
           run:
@@ -65,9 +65,9 @@ outputs:
         requirements:
           run:
             - python ${{ python_min }}.*
-            - basedmypy
+            - mypy
         script:
-          - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-unused-allowlist scipy
+          - stubtest --mypy-config-file=pyproject.toml --allowlist=.mypyignore --allowlist=.mypyignore-extra scipy
 
 about:
   license: BSD-3-Clause
