@@ -1,10 +1,10 @@
 schema_version: 1
 
 context:
-  version: "1.16.0.2"
+  version: "1.16.1.0"
   # scipy_version: ${{ (version | split('.'))[:-1] | join('.') }}
   scipy_version: 1.16.0
-  python_min: 3.11
+  python_min: '3.11'
   optype_min: 0.10.0
 
 recipe:
@@ -13,7 +13,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ version }}.tar.gz
-  sha256: f83aacaf2e899d044de6483e6112bf7a1942d683304077bc9e78cf6f21353acd
+  sha256: 4251c10d0a0a47b54916c49f62cc7b411ab0f7b78ea3946a156990110982d6d9
 
 build:
   number: 0
