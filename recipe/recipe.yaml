@@ -32,7 +32,7 @@ outputs:
         - pip
       run:
         - python >=${{ python_min }}
-        - optype-numpy >=${{ optype_min }},<{{ optype_max }}
+        - optype-numpy >=${{ optype_min }},<${{ optype_max }}
       run_constraints:
         - scipy >=${{ scipy_version }},<1.17.0
     tests:
