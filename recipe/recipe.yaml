@@ -66,6 +66,7 @@ outputs:
         requirements:
           run:
             - python ${{ python_min }}.*
+            - array-api-compat
             - mypy
         script:
           - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra scipy
