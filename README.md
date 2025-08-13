@@ -7,7 +7,7 @@ Home: https://github.com/scipy/scipy-stubs/
 
 Package license: BSD-3-Clause
 
-Summary: Precise type hints for all of SciPy.
+Summary: Typing Stubs for SciPy
 
 Development: https://github.com/scipy/scipy-stubs/
 
