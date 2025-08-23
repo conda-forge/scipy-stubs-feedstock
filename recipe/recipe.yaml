@@ -1,19 +1,20 @@
 schema_version: 1
 
 context:
-  version: "1.16.1.0"
-  # scipy_version: ${{ (version | split('.'))[:-1] | join('.') }}
+  stubs_version: 1
   scipy_version: 1.16.1
+  scipy_cap: 1.17.0
   python_min: 3.11
-  optype_min: 0.13.1
+  optype_min: 0.13.4
+  optype_cap: 0.14.0
 
 recipe:
   name: scipy-stubs-split
-  version: ${{ version }}
+  version: ${{ scipy_version }}.${{ stubs_version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ version }}.tar.gz
-  sha256: 4251c10d0a0a47b54916c49f62cc7b411ab0f7b78ea3946a156990110982d6d9
+  url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
+  sha256: 5b36fdcc1a66cc530c08917fa7c7499ec7a607487735419c677742dcf25803fb
 
 build:
   number: 0
@@ -31,9 +32,9 @@ outputs:
         - pip
       run:
         - python >=${{ python_min }}
-        - optype-numpy >=${{ optype_min }},<0.14.0
+        - optype-numpy >=${{ optype_min }}, <${{ optype_cap }}
       run_constraints:
-        - scipy >=${{ scipy_version }},<1.17.0
+        - scipy >=${{ scipy_version }}, <${{ scipy_cap }}
     tests:
       - requirements:
           run:
