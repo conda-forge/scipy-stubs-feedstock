@@ -1,12 +1,13 @@
 schema_version: 1
 
 context:
-  stubs_version: 1
-  scipy_version: 1.16.1
+  stubs_version: 0
+  scipy_version: 1.16.2
   scipy_cap: 1.17.0
   python_min: 3.11
   optype_min: 0.13.4
   optype_cap: 0.14.0
+  mypy_version: 1.17.1
 
 recipe:
   name: scipy-stubs-split
@@ -14,7 +15,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: 5b36fdcc1a66cc530c08917fa7c7499ec7a607487735419c677742dcf25803fb
+  sha256: 8fdd45155fca401bb755b1b63ac2f192f84f25c3be8da2c99d1cafb2708f3052
 
 build:
   number: 0
@@ -68,7 +69,7 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - array-api-compat
-            - mypy
+            - mypy ==${{ mypy_version }}
         script:
           - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra scipy
 
