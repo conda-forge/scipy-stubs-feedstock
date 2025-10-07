@@ -5,9 +5,9 @@ context:
   scipy_version: 1.16.2
   scipy_cap: 1.17.0
   python_min: 3.11
-  optype_min: 0.13.4
-  optype_cap: 0.14.0
-  mypy_version: 1.17.1
+  optype_min: 0.14.0
+  optype_cap: 0.15.0
+  mypy_version: 1.18.1
 
 recipe:
   name: scipy-stubs-split
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: 8fdd45155fca401bb755b1b63ac2f192f84f25c3be8da2c99d1cafb2708f3052
+  sha256: f22bbe677f8ae269ef275c32ea9d9caf2a11a79fc14ba8764f42dfe420224cb7
 
 build:
   number: 0
