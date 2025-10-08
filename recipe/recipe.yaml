@@ -1,13 +1,13 @@
 schema_version: 1
 
 context:
-  stubs_version: 0
+  stubs_version: 3
   scipy_version: 1.16.2
   scipy_cap: 1.17.0
   python_min: 3.11
-  optype_min: 0.13.4
-  optype_cap: 0.14.0
-  mypy_version: 1.17.1
+  optype_min: 0.14.0
+  optype_cap: 0.15.0
+  mypy_version: 1.18.1
 
 recipe:
   name: scipy-stubs-split
