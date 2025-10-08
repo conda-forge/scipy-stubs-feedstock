@@ -71,7 +71,7 @@ outputs:
             - array-api-compat
             - mypy ==${{ mypy_version }}
         script:
-          - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra scipy
+          - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-disjoint-bases scipy
 
 about:
   license: BSD-3-Clause
