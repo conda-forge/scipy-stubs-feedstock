@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  stubs_version: 0
+  stubs_version: 1
   scipy_version: 1.16.3
   scipy_cap: 1.17.0
   python_min: 3.11
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: d6943c085e47a1ed431309f9ca582b6a206a9db808a036132a0bf01ebc34b506
+  sha256: 0738d55a7f8b0c94cdb8063f711d53330ebefe166f7d48dec9ffd932a337226d
 
 build:
   number: 0
