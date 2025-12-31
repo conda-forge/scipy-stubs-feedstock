@@ -1,21 +1,21 @@
 schema_version: 1
 
 context:
-  stubs_version: 3
-  scipy_version: 1.16.3
-  scipy_cap: 1.17.0
+  stubs_version: 0
+  scipy_version: 1.17.0
+  scipy_cap: 1.18.0
   python_min: 3.11
   optype_min: 0.14.0
   optype_cap: 0.16.0
-  mypy_version: 1.19.0
+  mypy_version: 1.19.1
 
 recipe:
   name: scipy-stubs-split
-  version: ${{ scipy_version }}.${{ stubs_version }}
+  version: 1.17.0.0
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: af47578875d5557567225a16ec1b9b38a48c4c4377d92396413ebd65406c44ee
+  sha256: 01953f1c7967876be942afa21c1cc864c92714d01b1970ef8bdd468b4468d4b7
 
 build:
   number: 0
