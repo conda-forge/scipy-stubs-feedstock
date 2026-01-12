@@ -69,6 +69,7 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - array-api-compat
+            - pytest
             - mypy ==${{ mypy_version }}
         script:
           - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-disjoint-bases scipy
