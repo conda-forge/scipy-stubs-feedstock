@@ -1,1 +1,2 @@
 scipy\._lib\.test_conda_forge_packaging
+scipy\.special\._test_internal
