@@ -70,6 +70,7 @@ outputs:
             - python ${{ python_min }}.*
             - array-api-compat
             - pytest
+            - matplotlib
             - mypy ==${{ mypy_version }}
         script:
           - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-disjoint-bases scipy
