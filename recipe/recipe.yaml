@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  stubs_version: 0
+  stubs_version: 1
   scipy_version: 1.17.1
   scipy_cap: 1.18.0
   python_min: 3.11
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: 5dc51c21765b145c2d132b96b63ff4f835dd5fb768006876d1554e7a59c61571
+  sha256: e8f812a6eb298cfa3dd6b79a4af2b00fb4045f2ee28eadcc0eee8882208b5f1a
 
 build:
   number: 0
@@ -70,6 +70,7 @@ outputs:
             - python ${{ python_min }}.*
             - array-api-compat
             - pytest
+            - matplotlib
             - mypy ==${{ mypy_version }}
         script:
           - stubtest --allowlist=.mypyignore --allowlist=.mypyignore-extra --ignore-disjoint-bases scipy
