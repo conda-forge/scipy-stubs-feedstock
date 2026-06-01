@@ -7,8 +7,7 @@ context:
   python_min: "3.11"
   optype_min: 0.14.0
   optype_cap: 0.18.0
-  # mypy_version: 2.1.0
-  mypy_version: 1.20.2
+  mypy_version: 2.1.0
 
 recipe:
   name: scipy-stubs-split
