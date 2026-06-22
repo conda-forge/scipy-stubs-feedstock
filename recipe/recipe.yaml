@@ -1,12 +1,12 @@
 schema_version: 1
 
 context:
-  stubs_version: 5
-  scipy_version: 1.17.1
-  scipy_cap: 1.18.0
-  python_min: "3.11"
+  stubs_version: 0
+  scipy_version: 1.18.0
+  scipy_cap: 1.19.0
+  python_min: "3.12"
   optype_min: 0.14.0
-  optype_cap: 0.18.0
+  optype_cap: 0.19.0
   mypy_version: 2.1.0
 
 recipe:
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: 284b1dd1dd46107a614971d170030d310cd88b2ac6b483f85285ee0ff87720bd
+  sha256: a1fc917da66e4d338998839170e218754a669f6455c24243890a1e572bde98f6
 
 build:
   number: 0
@@ -79,11 +79,7 @@ about:
   license: BSD-3-Clause
   license_file: LICENSE
   summary: Typing Stubs for SciPy
-  description: |
-    Stubs package providing type annotations and static type checking support for SciPy,
-    enabling improved type inference and static analysis for scientific computing and
-    numerical programming in modern Python.
-
+  description: The official type stubs for SciPy.
   homepage: https://github.com/scipy/scipy-stubs/
   repository: https://github.com/scipy/scipy-stubs/
   documentation: https://github.com/scipy/scipy-stubs?tab=readme-ov-file#scipy-stubs

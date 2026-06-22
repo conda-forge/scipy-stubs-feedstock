@@ -13,9 +13,7 @@ Development: https://github.com/scipy/scipy-stubs/
 
 Documentation: https://github.com/scipy/scipy-stubs?tab=readme-ov-file#scipy-stubs
 
-Stubs package providing type annotations and static type checking support for SciPy,
-enabling improved type inference and static analysis for scientific computing and
-numerical programming in modern Python.
+The official type stubs for SciPy.
 
 Current build status
 ====================
