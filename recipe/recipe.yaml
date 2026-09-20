@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  stubs_version: 0
+  stubs_version: 1
   scipy_version: 1.18.1
   scipy_cap: 1.19.0
   python_min: "3.12"
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/scipy-stubs/scipy_stubs-${{ scipy_version }}.${{ stubs_version }}.tar.gz
-  sha256: 87bec0df883cd9cd6b7dc4c74a33362cf550e9cad679643a29a886ab2b438ddc
+  sha256: 87995ba945f04a3c3fb9cdb5c06d093cf3637ca1271ae6799eb8030b63fb2263
 
 build:
   number: 0
@@ -57,6 +57,9 @@ outputs:
         - ${{ pin_subpackage('scipy-stubs', exact=True) }}
     tests:
       - python:
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - scipy
       - files:
