@@ -57,6 +57,9 @@ outputs:
         - ${{ pin_subpackage('scipy-stubs', exact=True) }}
     tests:
       - python:
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - scipy
       - files:
